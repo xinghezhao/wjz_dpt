@@ -1,0 +1,145 @@
+/*当前显示伪基站数目*/
+#wjz_numbers {
+	font-size: 20px;
+	color: #fff;
+	border-radius: 10%;
+}
+
+#wjz_numbers_numbers {
+	background: #1AB394;
+	padding: 8px;
+	border-radius: 50%;
+}
+
+span.ft_line {
+	font-weight: bold;
+	margin:0 10px;
+}
+
+
+
+
+/*内页左侧导航栏*/
+#side-menu li.ny_left {
+	display: none;
+}
+
+#ny_table {
+	display: none;
+}
+#ny_table {
+	font-size: 13px;
+	line-height: 20px;
+	/*text-indent:2em;*/
+	margin-top: 20px;
+}
+
+
+/*内页接受时间、最新位置、短信内容*/
+#ny_table tbody>tr {
+	color: #A7B1AC;
+}
+#ny_table tbody>tr:nth-child(odd) {
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+}
+
+
+
+
+/*左侧内页选择时间*/
+.ny_select_time {
+	text-align: center;
+}
+.ny_select_time>li>label {
+	color:#A7B1AC;
+}
+
+/*内页地图*/
+#allmap1{
+	display: none;
+}
+
+
+
+/*主页左侧导航栏*/
+#side-menu li.zy_left {
+	/*display: none;*/
+}
+
+/*主页左侧导航栏 实时查询内的li*/
+.zy_sscx_li {
+	margin: 10px 0;
+}
+
+
+/*头部搜索*/
+#nav_search {
+	margin-top: -6px;
+}
+
+
+/*实时查询 下拉菜单*/
+.sscx_select {
+	width:100px; 
+	height: 30px;
+	padding:0 10px;
+	border-radius: 3px
+}
+
+
+
+/*实时查询单选按钮美化*/
+
+.regular-radio:checked + label {
+	background-color: #e9ecee;
+	color: #99a1a7;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1), inset 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.regular-radio + label:active, .regular-radio:checked + label:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 1366px) {
+	.ny_left > .ny_a {
+		padding:7px  25px  7px 20px;
+	}
+	.nav-header {
+		padding: 22px;
+	}
+
+	/*左上角伸缩按钮*/
+	#nav_main {	
+		margin: 14px 5px 5px 5px;
+	}
+
+	/*开始时间结束时间*/
+	#start_time,#end_time {
+		padding:5px 25px 5px 2px;
+	}
+}
+
+@media (max-width: 991px) {
+
+
+}
+
+
+
+@media (max-width: 767px){
+
+}

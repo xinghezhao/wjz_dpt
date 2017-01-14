@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>伪基站点+点击显示路线</title>
+    
+    <meta name="description" content="“互联网+”伪基站监管">
+    <meta name="keywords" content=" “互联网+”伪基站监管平台是基于“互联网+”工作模式和大数据分析，用来对权限范围行政区域范围内的伪基站进行快速发现、深度分析以及精确定位的平台。">
+
+    <!--[if lt IE 8]>                                                                                                                                                                                                                                                                                                                                  
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link rel="shortcut icon" href="images/img/favicon.ico">
+    <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min.css?v=4.0.0" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    
+    <link rel="stylesheet" href="js/layui/src/css/layui.css">
+    <link href="js/sanjiliandong/css/select2.css" rel="stylesheet"/>
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+    <div id="wrapper">
+        <!--左侧导s航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="nav-close"><i class="fa fa-times-circle"></i>
+            </div>
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span id = 'wjz_numbers'>伪基站数目<span id="wjz_numbers_numbers">22</span>个</span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                               <span class="block m-t-xs"><strong class="font-bold">Beaut-zihan</strong></span>
+                                <span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li id = 'li_vioce'>
+                                    <a href="javascript:;"><span id="vioce_down" class="glyphicon glyphicon-volume-down"></span></a>
+                                   
+                                    
+                                    <audio id = 'audio1'>
+                                      <source  src="style/audio.ogg" type="audio/ogg">
+                                      <source src="style/audio.mp3" type="audio/mpeg">
+                                    </audio>    
+                                                                        
+                                </li> 
+                                <li><a href="help.html" target="_blank">帮助</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="login.html">安全退出</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+<!--                     <li class="zy_left">
+                        <a href="#">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">查询</span>
+                        </a>
+                    </li> -->
+                    <li class="zy_left">
+                        <a href="#">
+                            <i class="layui-icon">&#xe632;</i>
+                            <span class="nav-label">实时查询</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        
+    
+                        <ul class="nav nav-second-level ny_select_time">
+                            <li class="zy_sscx_li">
+                                <input  id = 'zjsj' class="regular-radio" type="radio" name="cx_time" value='15'>
+                                <label class="zjsj" for = "zjsj">15分钟数据</label>                                
+                            </li>
+                            <li class="zy_sscx_li">
+                                <input id = "xzsh" class="regular-radio" type="radio" name="cx_time" value='30'>
+                                <label class="xzsj" for= "xzsh">30分钟数据</label>                                
+                            </li>
+                            <li class="zy_sscx_li">
+                                <input id = "qtsj" class="regular-radio" type="radio" name="cx_time" value='45'>
+                                <label class="qtsj" for= "qtsj">45分钟数据</label>
+                            </li>
+                            <li class="zy_sscx_li">
+                                <select class="sscx_select" id = "sscx_select" >
+                                    <option value="all_messages">全部类型</option>
+                                    <option value ="defraud_messages">诈骗短信</option>
+                                    <option value ="safety_messages">安全短信</option>
+                                    <option value="rubblish_messages">垃圾短信</option>
+                                </select>
+                            </li>
+                            <li class="zy_sscx_li">
+                                <input id = 'sscx_keyword' type="text" style="width:100px;" class="form-control center-block" placeholder="输入关键词">
+                            </li>
+                            <li class="zy_sscx_li">
+                                <button id = "realtime_btn" style="background: #fff; color:#000; width: 100px;" class="btn btn-default btn-sm" type="submit">实时查询</button>
+                            </li>
+                        </ul>
+                    
+                    </li>
+                    <li class="zy_left">
+                        <a href="#">
+                            <i class="layui-icon">&#xe609;</i>
+                            <span class="nav-label">跟踪伪基站</span>
+                        </a>
+                    </li class="zy_left">
+
+
+                    <li class="ny_left">
+                        <a class="ny_a" href="#">
+                            <i class="layui-icon">&#xe623;</i> 
+                            <span class="nav-label">开始仿真</span>
+                        </a>
+                    </li>
+                    <li class="ny_left">
+                        <a class="ny_a" href="#">
+                            <i class="layui-icon">&#xe643;</i>
+                            <span class="nav-label">暂停仿真</span>
+                        </a>
+                    </li>
+                    <li class="ny_left">
+                        <a class="ny_a" href="#">
+                            <i class = 'layui-icon'>&#x1006;</i>
+                            <span class="nav-label">停止仿真</span>
+                        </a>
+                    </li>
+                    <li class="ny_left">
+                        <a class="ny_a" href="#">
+                            <i class='layui-icon'>&#xe637;</i>
+                            <span class="nav-label">选择时间</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level ny_select_time">
+                            <li>
+
+                                <label><input name="zjsj" type="checkbox" value="" />最近时间</label>                                
+                            </li>
+                            <li>
+                                <label><input name="xzsj" type="checkbox" value="" />选择时间</label>                                
+                            </li>
+                            <li>
+                                <label><input name="qtsj" type="checkbox" value="" />其它时间</label>                                
+                            </li>
+                        </ul>
+                    </li>                                                                
+                    <li class="ny_left">
+                        <a class="ny_a" href="#" id = "btn_table_excels">
+                            <i class='layui-icon'>&#xe601;</i>
+                            <span class="nav-label">信息导出</span>
+                        </a>
+                    </li>  
+                    <li class="ny_left" id = "back_zy">
+                        <a class="ny_a" href="#">
+                            <i class="layui-icon">&#x1002;</i>
+                            <span class="nav-label">回到主页</span>
+                        </a>
+                    </li>                                                    
+                </ul>    
+                <div class="table-responsive" style = "margin-right: 3px;">
+                    <table class="table table-bordered table-condensed" id = "zy_table">
+                        <thead id = 'table_header'>
+                            <tr>
+                                <th>地点</th>
+                                <th>伪基站数目(前十排名)</th>
+                            </tr>
+                        </thead>
+                        <tbody id = 'zy_body'>
+                            <tr>
+                                <td style = 'color:#fff;'>北京市</td>
+                                <td style = 'color:#fff;'>22</td>
+                            </tr>
+                            <tr>
+                                <td style = 'color:#fff;'>上海</td>
+                                <td style = 'color:#fff;'>23</td>
+                            </tr>
+                            <tr>
+                                <td style = 'color:#fff;'>河北</td>
+                                <td style = 'color:#fff;'>22</td>
+                            </tr>
+                            <tr>
+                                <td style = 'color:#fff;'>河南</td>
+                                <td style = 'color:#fff;'>44</td>
+                            </tr>
+                            <tr>
+                                <td style = 'color:#fff;'>山东</td>
+                                <td style = 'color:#fff;'>11</td>
+                            </tr>
+                            <tr>
+                                <td style = 'color:#fff;'>山西</td>
+                                <td style = 'color:#fff;'>32</td>
+                            </tr>
+                            <tr>
+                                <td style = 'color:#fff;'>澳门</td>
+                                <td style = 'color:#fff;'>44</td>
+                            </tr>
+                            <tr>
+                                <td style = 'color:#fff;'>陕西</td>
+                                <td style = 'color:#fff;'>41</td>
+                            </tr>
+                            <tr>
+                                <td style = 'color:#fff;'>内蒙古</td>
+                                <td style = 'color:#fff;'>20</td>
+                            </tr>
+                            <tr>
+                                <td style = 'color:#fff;'>新疆</td>
+                                <td style = 'color:#fff;'>8</td>
+                            </tr>                                                                       
+                        </tbody>
+                    </table>
+
+                    <table class="table table-bordered table-condensed table_excel" id = "ny_table">
+                        <tbody>
+                            <tr colspan='2'>
+                                <td>接收时间</td>
+                            </tr>
+                            <tr>
+                                <td colspan = '2'>        
+                                2016年10月23日 14:47 <br>
+                                至2016年11月25日 09:56
+                                </td>
+                            </tr> 
+                            <tr colspan='2'>
+                                <td>
+                                    最新位置
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td colspan = '2'>        
+                                    河南省周口市沈丘县兆丰大道南段
+                                </td>
+                            </tr>  
+                            <tr>
+                                <td colspan='2'>
+                                    短信内容
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan = '2'>  11月热闹惊喜再度来袭11月24-27日小冀英特纳黄金免工费调换不限品牌克数件数彩金免工费调换，黄金免费换铂金一克换一克黄金288/克</td>
+                            </tr>                        
+                        </tbody>
+                    </table>                      
+         
+            </div> 
+        </nav>
+        <!--左侧导航结束-->
+
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                        <a id = "nav_main" class="navbar-minimalize minimalize-styl-2 btn btn-primary pull-left" href="#">   <i class="fa fa-bars"></i>
+                        </a>
+                
+                    <div class="bs-example bs-example-form" role="form" id = "nav_search">
+                        <div class="input-group input-group-sm" id = "nav_search" style="margin-top: 15px;">
+                            <span class="input-group-addon">开始时间</span>
+                            
+                            <input style="height: 40px;"  type="text" id = 'start_time' class="form-control nav_time laydate-icon" placeholder="请选择开始时间">
+                            
+                            <span class="input-group-addon">结束时间</span>
+                            <input style="height: 40px;" type="text" id = 'end_time'  class="form-control nav_time laydate-icon" placeholder="请选择结束时间">
+                            
+                            <span  class="input-group-addon">关键词</span>
+                            <input id = 'tjcx_keyword' style="height: 40px;" type="text" class="form-control" placeholder="请输入关键词">
+                            <span class="input-group-addon">
+                                <select id = 'tjcx_select' class="sscx_select">
+                                    <option value="all_messages">全部类型</option>
+                                    <option value ="defraud_messages">诈骗短信</option>
+                                    <option value ="safety_messages">安全短信</option>
+                                    <option value="rubblish_messages">垃圾短信</option>
+                                </select>
+                            </span>
+                            <span class="input-group-addon">省市</span>
+                            <span class="input-group-addon">
+                                    <select id="loc_province" style="width: 85px;">
+                                    </select>
+                                    <select id="loc_city"  style="width: 100px;">
+                                    </select>
+                                    <select style="display: none" id="loc_town" style="width:120px;margin-left: 10px">
+                                    </select>                                   
+                            </span>
+                            <span class="input-group-addon">
+                                <button id = "statistics_btn" style="background: #fff; color:#000;" class="btn btn-default btn-sm" type="submit">统计查询</button>
+                            </span>
+                        </div>
+                    </div>
+                </nav>                
+            </div>
+            <div class="row J_mainContent" id="content-main">
+                <div style="width:100%;height:100%" id="allmap"></div>
+                <div style="width:100%;height:100%" id="allmap1"></div>
+            </div>
+            <div class="footer">
+                <div class="img_logo pull-right">
+                    <div class="img_logo-stype">
+                        <span class = "img_logo-stype_span1">诈骗:</span>
+                        <img src="images/img/marker_red_1.png" alt="">
+                        <span class = "img_logo-stype_span2"> >1条</span>
+                        <img src="images/img/marker_red_0.png" alt="">
+                        <span class = "img_logo-stype_span2"> =1条</span>  
+                        
+                        <span class="ft_line">|</span>
+
+                        <span class = "img_logo-stype_span1">安全:</span>
+                        <img src="images/img/marker_yellow_1.png" alt="">
+                        <span class = "img_logo-stype_span2"> >1条</span>
+                        <img src="images/img/marker_yellow_0.png" alt="">
+                        <span class = "img_logo-stype_span2"> =1条</span>    
+                
+                        <span class="ft_line">|</span>
+
+                        <span class = "img_logo-stype_span1">垃圾:</span>
+                        <img src="images/img/marker_blue_1.png" alt="">
+                        <span class = "img_logo-stype_span2"> >1条</span>
+                        <img src="images/img/marker_blue_0.png" alt="">
+                        <span class = "img_logo-stype_span2"> =1条</span> 
+
+                        <span class="ft_line">|</span>
+
+                        <span class = "img_logo-stype_span1">跟踪:</span>
+                        <img src="images/img/marker_green_1.png" alt="">
+                        <span class = "img_logo-stype_span2"> >1条</span>     
+                        <button id = "tiaozhuan" type = "btn" class="btn btn-danger btn-xs">跳转</button>       
+                    </div>                                              
+
+                </div>                
+            </div>
+        </div>
+        <!--右侧部分结束-->
+    </div>
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/plugins/layer/layer.min.js"></script>
+     <script src="js/hplus.min.js?v=4.0.0"></script>
+    <script type="text/javascript" src="js/contabs.min.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+    <script type = "text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GS0gGAVjvLofVs576BaPEb5fFa8ch7U5"></script>
+    <script src="js/laydate/laydate.js"></script>
+    <script src = "js/my_write.js"></script>
+
+
+    <script src="js/layui/src/layui.js"></script>
+
+    <script type="text/javascript" src="js/sanjiliandong/js/area.js"></script>
+    <script type="text/javascript" src="js/sanjiliandong/js/location.js"></script>
+    <script type="text/javascript" src="js/sanjiliandong/js/select2.js"></script>
+    <script type="text/javascript" src="js/sanjiliandong/js/select2_locale_zh-CN.js"></script>
+
+    <script tpye = "text/javascript" src = "js/my_table_excels/jquery.table2excel.min.js"></script> <!-- table导出excel -->
+</body>
+
+</html>
+
+<script>
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");    // 创建Map实例
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 15);  // 初始化地图,设置中心点坐标和地图级别
+    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+    map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    // 添加带有定位的导航控件
+    var navigationControl = new BMap.NavigationControl({
+         // 靠左上角位置
+        anchor: BMAP_ANCHOR_TOP_LEFT,
+        // LARGE类型
+        type: BMAP_NAVIGATION_CONTROL_LARGE,
+        // 启用显示定位
+        enableGeolocation: true
+    })
+    map.addControl(navigationControl);
+</script>
+    
+    
+
+  
+<script>
+    // 百度地图API功能
+    var map = new BMap.Map("allmap1");    // 创建Map实例
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 8);  // 初始化地图,设置中心点坐标和地图级别
+    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+    map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    // 添加带有定位的导航控件
+    var navigationControl = new BMap.NavigationControl({
+         // 靠左上角位置
+        anchor: BMAP_ANCHOR_TOP_LEFT,
+        // LARGE类型
+        type: BMAP_NAVIGATION_CONTROL_LARGE,
+        // 启用显示定位
+        enableGeolocation: true
+    })
+    map.addControl(navigationControl);
+</script>    
+
+

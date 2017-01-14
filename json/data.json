@@ -1,0 +1,46 @@
+{
+	"ten_data": [
+		{
+			"place" : "北京",
+			"numbers" : 22
+		},
+		{
+			"place" : "上海",
+			"numbers" : 31
+		},
+		{
+			"place" : "深圳",
+			"numbers" : 43
+		},
+		{
+			"place" : "河北",
+			"numbers" : 22
+		},	
+		{
+			"place" : "河南",
+			"numbers" : 56
+		},
+		{
+			"place" : "山西",
+			"numbers" : 98
+		},
+		{
+			"place" : "新疆",
+			"numbers" : 10
+		},
+		{
+			"place" : "北京",
+			"numbers" : 22
+		},
+		{
+			"place" : "内蒙古",
+			"numbers" : 21
+		},
+		{
+			"place" : "黑龙江",
+			"numbers" : 62
+		}								
+	]
+}
+
+	

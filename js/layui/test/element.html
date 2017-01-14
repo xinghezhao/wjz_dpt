@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>常用元素 - layui</title>
+
+<link rel="stylesheet" href="../src/css/layui.css">
+
+<style>
+body{padding: 10px;}
+</style>
+</head>
+<body>
+
+<blockquote class="layui-elem-quote">Layui正是你苦苦寻找的前端UI框架</blockquote>
+<blockquote class="layui-elem-quote layui-quote-nm">Layui正是你苦苦寻找的前端UI框架Layui正是你苦苦寻找的前端UI框架Layui正是你苦苦寻找的前端UI框架Layui正是你苦苦寻找的前端UI框架Layui正是你苦苦寻找的前端UI框架</blockquote>
+
+<fieldset class="layui-elem-field">
+  <legend>字段集区块 - 默认风格</legend>
+  <div class="layui-field-box">
+    内容区域
+  </div>
+</fieldset>
+
+<fieldset class="layui-elem-field layui-field-title">
+  <legend>字段集区块 - 横线风格</legend>
+</fieldset>
+
+我们都是
+<hr>
+好孩子
+
+
+<ul class="layui-nav">
+  <li class="layui-nav-item"><a href="">最新活动</a></li>
+  <li class="layui-nav-item layui-this">
+    <a href="">产品</a>
+    <dl class="layui-nav-child">
+      <dd><a href="">选项1</a></dd>
+      <dd><a href="">选项2</a></dd>
+      <dd><a href="">选项3</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item"><a href="">大数据</a></li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">解决方案</a>
+    <dl class="layui-nav-child">
+      <dd><a href="">移动模块</a></dd>
+      <dd class="layui-this"><a href="">后台模版</a></dd>
+      <dd><a href="">电商平台</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item"><a href="">社区</a></li>
+</ul>
+
+<br><br>
+
+<ul class="layui-nav layui-nav-tree"  lay-filter="test">
+  <li class="layui-nav-item layui-nav-itemed">
+    <a class="" href="javascript:;">产品</a>
+    <dl class="layui-nav-child">
+      <dd><a href="javascript:;">移动模块</a></dd>
+      <dd><a href="javascript:;">后台模版</a></dd>
+      <dd><a href="javascript:;">电商平台</a></dd>
+      <dd><a href="">跳转菜单</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">解决方案</a>
+    <dl class="layui-nav-child">
+      <dd><a href="javascript:;">移动模块</a></dd>
+      <dd><a href="javascript:;">后台模版</a></dd>
+      <dd><a href="">电商平台</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item"><a href="">云市场</a></li>
+  <li class="layui-nav-item"><a href="">社区</a></li>
+</ul>
+
+
+<br><br>
+
+<span class="layui-breadcrumb">
+  <a href="">首页</a>
+  <a href="">国际新闻</a>
+  <a href="">亚太地区</a>
+  <a><cite>正文</cite></a>
+</span>
+
+<br><br>
+
+<span class="layui-breadcrumb" lay-separator="|">
+  <a href="">娱乐</a>
+  <a href="">八卦</a>
+  <a href="">体育</a>
+  <a href="">搞笑</a>
+  <a href="">视频</a>
+  <a href="">游戏</a>
+  <a href="">综艺</a>
+</span>
+
+<br><br>
+
+<div class="layui-tab" lay-filter="tabDemo" lay-allowClose="true">
+  <ul class="layui-tab-title">
+    <li class="layui-this">标题1</li>
+    <li>标题2</li>
+    <li>标题3</li>
+    <li>标题4</li>
+    <li>标题5</li>
+  </ul>
+  <div class="layui-tab-content">
+    <div class="layui-tab-item layui-show">1</div>
+    <div class="layui-tab-item">2</div>
+    <div class="layui-tab-item">3</div>
+    <div class="layui-tab-item">4</div>
+    <div class="layui-tab-item">5</div>
+  </div>
+</div>
+
+<button class="layui-btn" onclick="layui.element().tabChange('tabDemo', 2)">手工切换到第三项</button>
+<button class="layui-btn" onclick="layui.element().tabAdd('tabDemo', {title:'新标题', content:'新内容'})">添加Tab</button>
+<button class="layui-btn" onclick="layui.element().tabDelete('tabDemo', 3)">删除第四项</button>
+
+<div class="layui-tab layui-tab-brief">
+  <ul class="layui-tab-title">
+    <li class="layui-this">标题1</li>
+    <li>标题2</li>
+    <li>标题3</li>
+    <li>标题4</li>
+    <li>标题5</li>
+    <li>标题6</li>
+  </ul>
+</div>
+
+<div class="layui-inline">
+  <div class="layui-tab layui-tab-card">
+    <ul class="layui-tab-title">
+      <li class="layui-this">标题1</li>
+      <li>标题2</li>
+      <li>标题3</li>
+      <li>标题4</li>
+      <li>标题5</li>
+      <li>标题6</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">1</div>
+      <div class="layui-tab-item">2</div>
+      <div class="layui-tab-item">3</div>
+      <div class="layui-tab-item">4</div>
+      <div class="layui-tab-item">5</div>
+      <div class="layui-tab-item">6</div>
+    </div>
+  </div>
+</div>
+
+<div class="layui-tab" lay-filter="test" lay-allowClose="true">
+  <ul class="layui-tab-title">
+    <li class="layui-this">标题1</li>
+    <li>标题2</li>
+    <li>标题3</li>
+    <li>标题4</li>
+    <li>标题5</li>
+    <li>标题6</li>
+    <li>标题7</li>
+    <li>标题8</li>
+  </ul>
+</div>
+
+
+
+<script src="../src/layui.js"></script>
+<script>
+
+layui.use('element', function(){
+  var element = layui.element();
+  
+  element.on('tab(test)', function(data){
+    console.log(this, data);
+  });
+  
+  element.on('nav(test)', function(elem){
+    console.log(elem)
+  });
+});
+</script>
+</body>
+</html>
